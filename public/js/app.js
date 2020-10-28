@@ -32065,7 +32065,7 @@ return jQuery;
         }
         index = offset + match.length;
 
-        // The JS engine embedded in Adobe products needs `match` returned in
+        // The JS engine embedded in Adobe exams needs `match` returned in
         // order to produce the correct `offset` value.
         return match;
       });
@@ -37331,8 +37331,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/me/laravel8/rolespermission/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/me/laravel8/rolespermission/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\jcs-results\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\jcs-results\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

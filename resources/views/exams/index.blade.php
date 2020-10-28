@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Products</h2>
+                <h2>Exams</h2>
             </div>
             <div class="pull-right">
                 @can('product-create')
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('exams.create') }}"> Create New Exam</a>
                 @endcan
             </div>
         </div>
@@ -28,18 +28,20 @@
             <th>No</th>
             <th>Name</th>
             <th>Details</th>
+            <th>Paciente</th>
             <th width="280px">Action</th>
         </tr>
-	    @foreach ($products as $product)
+	    @foreach ($exams as $exam)
 	    <tr>
 	        <td>{{ ++$i }}</td>
-	        <td>{{ $product->name }}</td>
-	        <td>{{ $product->detail }}</td>
+	        <td>{{ $exam->name }}</td>
+	        <td>{{ $exam->detail }}</td>
+	        <td>{{ $exam->user->name }}</td>
 	        <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                <form action="{{ route('exams.destroy',$exam->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('exams.show',$exam->id) }}">Show</a>
                     @can('product-edit')
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('exams.edit',$exam->id) }}">Edit</a>
                     @endcan
 
 
@@ -55,8 +57,6 @@
     </table>
 
 
-    {!! $products->links() !!}
+    {!! $exams->links() !!}
 
-
-<p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
 @endsection

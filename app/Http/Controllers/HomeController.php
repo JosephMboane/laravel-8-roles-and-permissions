@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+//        if ((Auth::user()->password_change_at == null)) {
+//            return redirect(route('change-password'));
+//        }
+//        else{
+//
+//            return view('home');
+//        }
+
         return view('home');
     }
 }
