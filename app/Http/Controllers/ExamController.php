@@ -77,7 +77,18 @@ class ExamController extends Controller
      */
     public function show(Exam $exam)
     {
-        return view('exams.show',compact('exam'));
+        $users = User::pluck('name','id');
+
+        return view('exams.show',compact('exam','users'));
+    }
+
+//    public function showPDF(Exam $exam)
+    public function showPDF($id)
+    {
+        $exam = Exam::find($id);
+        $users = User::pluck('name','id');
+
+        return view('exams.myPDF',compact('exam','users'));
     }
 
     /**
@@ -88,7 +99,8 @@ class ExamController extends Controller
      */
     public function edit(Exam $exam)
     {
-        return view('exams.edit',compact('exam'));
+        $users = User::pluck('name','id');
+        return view('exams.edit',compact('exam','users'));
     }
 
     /**
@@ -103,12 +115,27 @@ class ExamController extends Controller
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
+             'user_id' => 'required'
         ]);
 
         $exam->update($request->all());
 
         return redirect()->route('exams.index')
                         ->with('success','Exam updated successfully');
+    }
+    public function download()
+    {
+//        $render = view('myPDF')->render();
+//
+//        $pdf = new Pdf;
+//        $pdf->addPage($render);
+//        $pdf->setOptions(['javascript-delay' => 5000]);
+//        $pdf->saveAs(public_path('result.pdf'));
+//
+//        return response()->download(public_path('result.pdf'));
+//
+        $pdf = PDF::loadView('exams.myPDF');
+        return $pdf->download('itsolutionstuff.pdf');
     }
 
     /**

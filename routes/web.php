@@ -20,7 +20,7 @@ use App\Http\Controllers\PDFController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+//Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('preview', [PDFController::class, 'preview']);
 Route::get('download', [PDFController::class, 'download'])->name('download');
 Route::get('/', function () {
@@ -36,8 +36,12 @@ Route::resource('update-password-user',\App\Http\Controllers\SettingsController:
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('exam/{id}/preview', [ExamController::class, 'showPDF']);
+Route::get('download', [ExamController::class, 'download'])->name('download');
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('exams', ExamController::class);
+
 });

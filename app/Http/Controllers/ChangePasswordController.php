@@ -86,11 +86,11 @@ class ChangePasswordController extends Controller
 
 
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)],['status' =>'Positivo']);
 
 
 
-        dd('Password change successfully.');
+//        dd('Password change successfully.');
 
         return redirect()->route('home')
             ->with('success','A sua senha foi alterada com Sucesso!');

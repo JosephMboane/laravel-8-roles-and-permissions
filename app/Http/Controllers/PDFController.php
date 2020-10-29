@@ -28,10 +28,6 @@ class PDFController extends Controller
     {
         return view('myPDF');
     }
-    public function teste(){
-//        return view('myPDF');
-        return "Ola";
-    }
     public function download()
     {
 //        $render = view('myPDF')->render();

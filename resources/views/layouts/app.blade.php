@@ -74,4 +74,13 @@
         </main>
     </div>
 </body>
+
+<script>
+    setTimeout(function() {
+        $('.alert').remove();
+    }, 3000);
+    setTimeout(function() {
+        $('#Bem').remove();
+    }, 3000);
+</script>
 </html>

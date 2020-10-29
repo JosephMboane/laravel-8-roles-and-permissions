@@ -20,7 +20,7 @@ class CreateAdminUserSeeder extends Seeder
         	'name' => 'JCS',
         	'email' => 'admin@gmail.com',
             'contact' => +258840792127,
-            'status' => 'Negativo',
+            'status' => 'Positivo',
         	'password' => bcrypt('123456')
         ]);
 
@@ -28,7 +28,7 @@ class CreateAdminUserSeeder extends Seeder
             'name' => 'Joseph Mboane',
             'email' => 'joseph@gmail.com',
             'contact' => +258840792127,
-            'status' => 'Negativo',
+            'status' => 'Positivo',
             'password' => bcrypt('123456')
         ]);
 
