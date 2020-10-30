@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Exam;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use DB;
@@ -59,6 +60,15 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
+        $email = $request->get('email');
+
+        $data = ([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'contact' => $request->get('contact'),
+        ]);
+        Mail::to($email)->send(new WelcomeMail($data));
+
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
     }
@@ -89,6 +99,18 @@ class UserController extends Controller
         $userRole = $user->roles->pluck('name','name')->all();
 
         return view('users.edit',compact('user','roles','userRole','exams'));
+    }
+    public function perfil()
+    {
+//        if (Auth::check()) {
+
+            $user = User::with('exams')->get();
+//        dd($user);
+            return view('users.profile',compact('user'));
+
+//        }
+
+
     }
 
     /**

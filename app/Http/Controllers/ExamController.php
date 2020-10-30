@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Exam;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use PDF;
 class ExamController extends Controller
 {
     /**
@@ -134,8 +134,10 @@ class ExamController extends Controller
 //
 //        return response()->download(public_path('result.pdf'));
 //
+        $exam = Exam::all();
+        $users = User::pluck('name','id');
         $pdf = PDF::loadView('exams.myPDF');
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download('itsolutionstuff.pdf',compact('exam','users'));
     }
 
     /**
