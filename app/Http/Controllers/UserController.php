@@ -66,8 +66,9 @@ class UserController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'contact' => $request->get('contact'),
+            'password'=>  $request->get('password'),
         ]);
-        Mail::to($email)->send(new WelcomeMail($data));
+        \Mail::to($email)->send(new WelcomeMail($data));
 
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
