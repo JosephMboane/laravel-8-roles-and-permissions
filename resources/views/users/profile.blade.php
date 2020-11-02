@@ -12,7 +12,7 @@
             <p>{{ Auth::user()->name }}</p>
             <p>{{ Auth::user()->contact }}</p>
             <p>{{ Auth::user()->email }}</p>
-            <p>{{ Auth::user()->exams}}</p>
+            <p>{{ Auth::user()->exams[0]->name}}</p>
         </div>
         <div class="col-md-4"></div>
     </div>
