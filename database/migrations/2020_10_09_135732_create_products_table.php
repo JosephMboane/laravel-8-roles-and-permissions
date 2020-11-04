@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('status')->default('Negativo');
             $table->text('detail');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

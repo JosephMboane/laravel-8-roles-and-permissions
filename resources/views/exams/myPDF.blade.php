@@ -15,24 +15,25 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Name:</strong>
-{{--            {{ $exam->name }}--}}
+            {{ Auth::user()->name }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Details:</strong>
-{{--            {{ $exam->detail }}--}}
+            {{ Auth::user()->contact }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome do Paciente:</strong>
-{{--            {{ $exam->user->name }}--}}
+            {{ Auth::user()->exams[0]->name}}
         </div>
     </div>
 </div>
 <div class="text-center">
     <a href="/download">Download PDF File</a>
+    <a href="{{ route('download') }}">Download here</a>
     <h2>JCS</h2>
 </div>
 @endsection

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('status')->default('Negativo');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('password_change_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

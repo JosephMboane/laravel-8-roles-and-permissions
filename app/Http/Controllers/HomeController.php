@@ -24,18 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        if ((Auth::user()->password_change_at == null)) {
-//        if ((Auth::user()->status == 'Negativo')) {
-//            return redirect(route('change-password'));
-//        }
-//        else{
-//
-//            return view('home');
-//        }
+        if ((Auth::user()->status == 'Negativo')) {
+//            return redirect()->route('change-password');
+            return view('homePaciente');
+        }
+        else{
 
-//            return view('home');
-//        }
-
-        return view('home');
+            return view('home');
+        }
     }
 }

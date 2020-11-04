@@ -59,7 +59,9 @@
     <div class="col-xs-12 col-sm-12 col-md-4">
         <div class="form-group">
 {{--            <strong>Role:</strong>--}}
-            {!! Form::select('roles[]', $roles,[], array( 'placeholder'=> 'Funções','class' => 'form-control','multiple',),['disablePlaceholder' => true]) !!}
+            {!! Form::select('roles[]', $roles, null, ['class' => 'form-control','placeholder'=>'Funções']) !!}
+
+{{--            {!! Form::select('roles[]', $roles,[], array( 'placeholder'=> 'Funções','class' => 'form-control','multiple',),['disablePlaceholder' => true]) !!}--}}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

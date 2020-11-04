@@ -23,6 +23,7 @@ use App\Http\Controllers\PDFController;
 */
 //Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('preview-teste', [PDFController::class, 'preview']);
+Route::get('preview-morte', [PDFController::class, 'generatePDF']);
 Route::get('download-preview', [PDFController::class, 'download'])->name('download');
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +31,7 @@ Route::get('/', function () {
 Route::get('change-password', [\App\Http\Controllers\ChangePasswordController::class,'index']);
 
 Route::post('change-password', [\App\Http\Controllers\ChangePasswordController::class,'store'])->name('change.password');
+//Route::post('change-password', [\App\Http\Controllers\ChangePasswordController::class,'changePassword'])->name('change.password');
 Auth::routes();
 
 Route::resource('update-password',SettingsController::class);
@@ -56,3 +58,6 @@ Route::get('/send-mail',function (){
     \Mail::to('josephjmboane@gmail.com')->send(new \App\Mail\WelcomeMail($data));
     echo "Enviado Com Sucesso!!";
 });
+
+Route::get('pdf/preview', [PDFController::class, 'preview'])->name('pdf.preview');
+Route::get('pdf/generate', [PDFController::class, 'generatePDF'])->name('pdf.generate');

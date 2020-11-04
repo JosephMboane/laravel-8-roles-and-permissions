@@ -134,10 +134,9 @@ class ExamController extends Controller
 //
 //        return response()->download(public_path('result.pdf'));
 //
-        $exam = Exam::all();
-        $users = User::pluck('name','id');
+        $users = User::with('exams')->get();
         $pdf = PDF::loadView('exams.myPDF');
-        return $pdf->download('itsolutionstuff.pdf',compact('exam','users'));
+        return $pdf->download('itsolutionstuff.pdf',compact('users'));
     }
 
     /**

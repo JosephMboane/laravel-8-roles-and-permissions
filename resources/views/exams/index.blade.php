@@ -41,6 +41,7 @@
                 <form action="{{ route('exams.destroy',$exam->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('exams.show',$exam->id) }}">Show</a>
                     <a class="btn btn-info" href="/exam/{{$exam->id}}/preview">Print</a>
+                    <a class="btn btn-info" href="pdf/preview">Print2</a>
                     @can('product-edit')
                     <a class="btn btn-primary" href="{{ route('exams.edit',$exam->id) }}">Edit</a>
                     @endcan

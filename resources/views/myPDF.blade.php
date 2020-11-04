@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-{{--<h1>{{ $title }}</h1>--}}
-{{--<p>{{ $date }}--}}
+<h1>{{ $title }}</h1>
+<p>{{ $date }}
 @section('content')
 <p>{{ Auth::user()->name }}</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
