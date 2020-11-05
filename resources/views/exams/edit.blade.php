@@ -47,16 +47,23 @@
                         <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $exam->detail }}</textarea>
                     </div>
                 </div>
+
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        {!! Form::Label('item', 'Pacientes') !!}
-
-                        {!! Form::select('user_id', $users, null, ['class' => 'form-control','placeholder'=>'Nome do Paciente']) !!}
-
+                        <strong>Estado:</strong>
+                        <input type="text" name="status" value="{{ $exam->status }}" class="form-control" placeholder="Estado">
                     </div>
                 </div>
+{{--                <div class="col-xs-12 col-sm-12 col-md-12">--}}
+{{--                    <div class="form-group">--}}
+{{--                        {!! Form::Label('item', 'Pacientes') !!}--}}
+
+{{--                        {!! Form::select('user_id', $users, null, ['class' => 'form-control','placeholder'=>'Nome do Paciente']) !!}--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
                 </div>
             </div>
         </div>

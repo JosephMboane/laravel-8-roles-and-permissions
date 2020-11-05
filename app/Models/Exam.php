@@ -15,7 +15,7 @@ class Exam extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'detail','user_id'
+        'name', 'detail','user_id','status'
     ];
 
     public function user(){

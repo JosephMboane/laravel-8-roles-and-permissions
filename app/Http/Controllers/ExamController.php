@@ -53,11 +53,11 @@ class ExamController extends Controller
     {
         request()->validate([
             'name' => 'required',
-            'detail' => 'required',
+//            'detail' => 'required',
             'user_id' => 'required'
         ]);
 
-        Exam::create($request->all());
+                Exam::create($request->all());
 
 //        $input = $request->all();
 //        $user_id = $request->input('user_id');
@@ -115,7 +115,7 @@ class ExamController extends Controller
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
-             'user_id' => 'required'
+            'status' => 'required',
         ]);
 
         $exam->update($request->all());

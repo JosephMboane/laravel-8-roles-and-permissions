@@ -27,7 +27,7 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
+{{--            <th>Details</th>--}}
             <th>Paciente</th>
             <th width="280px">Action</th>
         </tr>
@@ -35,7 +35,7 @@
 	    <tr>
 	        <td>{{ ++$i }}</td>
 	        <td>{{ $exam->name }}</td>
-	        <td>{{ $exam->detail }}</td>
+{{--	        <td>{{ $exam->detail }}</td>--}}
 	        <td>{{ $exam->user->name }}</td>
 	        <td>
                 <form action="{{ route('exams.destroy',$exam->id) }}" method="POST">

@@ -28,6 +28,10 @@ Route::get('download-preview', [PDFController::class, 'download'])->name('downlo
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/teste-Dynamic', function () {
+    return view('testDynamic');
+});
+
 Route::get('change-password', [\App\Http\Controllers\ChangePasswordController::class,'index']);
 
 Route::post('change-password', [\App\Http\Controllers\ChangePasswordController::class,'store'])->name('change.password');
