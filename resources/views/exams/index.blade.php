@@ -9,7 +9,7 @@
             </div>
             <div class="pull-right">
                 @can('product-create')
-                <a class="btn btn-success" href="{{ route('exams.create') }}"> Create New Exam</a>
+                <a class="btn btn-success" href="{{ route('exams.create') }}"> Adicionar Novo Exame</a>
                 @endcan
             </div>
         </div>
